@@ -1,0 +1,12 @@
+cat > default-deny-prod.yaml <<EOL
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-prod
+  namespace: prod
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+EOL
